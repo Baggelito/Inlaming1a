@@ -1,28 +1,37 @@
 #include <stdio.h>
 
-// Gör subrationen mellan talen. 
-void subtract(double* x,
+// Gör dividerar mellan talen. 
+void divistion(double* x,
 				double* y,
 				double* z)
 {
-	*z = *x - *y;
+	*z = *x / *y;
 
+	return;
+}
+
+void electrical_print(double x, 
+					  double y, 
+				   	  double z)
+{
+	printf("--------------------------------\n");
+	printf("Voltage: %lg V\n", x);
+	printf("Current: %lg mA\n", y);
+	printf("Resistance: %lg kOhm\n", z);
+	printf("--------------------------------\n");
 	return;
 }
 
 
 int main()
 {
-	double a = 3.4;  // ger a värdet 3.4
-	double b = 6.8; // ger b värdet 6.8
-	double c = 0; // gör c till en float 
+	double voltage = 3.4;  // ger a värdet 3.4
+	double current = 6.8; // ger b värdet 6.8
+	double resistance = 0; // gör c till en float 
 
-	subtract(&a, &b, &c);
+	divistion(&voltage, &current, &resistance);
 
-	printf("%lg - %lg = %lg\n", a, b, c); // skriver ut vad a - b = c är
-
-
-
+	electrical_print(voltage, current, resistance);
 
 	return;
-}
+}	
